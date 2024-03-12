@@ -7,16 +7,28 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="icon" href="img/flowers.png" type="image/x-icon">
     <title>flowers</title>
-    <script src="main.js"></script>
+    <style>
+        /* Gaya untuk popup */
+        #popup {
+            display: none; /* Agar awalnya tersembunyi */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            z-index: 9999;
+        }
+    </style>
 </head>
-    <audio autoplay loop>
-     <source src="https://j.top4top.io/m_299357awq1.mp3" type="audio/mpeg" allow="autoplay"; encrypt-media ></audio>
-    <body class="container">
-    <button id="playButton">Play Music</button>
-    <!-- Pop-up untuk memainkan musik -->
-    <div id="musicPopup" class="popup">
-        <p>Klik OK untuk memainkan musik</p>
-        <button onclick="playMusic()">OK</button>
+<body class="container">
+    <!-- Popup untuk memainkan musik -->
+    <div id="popup">
+        <h2>Music Player</h2>
+        <p>Music is now playing...</p>
     </div>
 </body>
 <body class="container">
