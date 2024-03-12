@@ -27,7 +27,20 @@ function playMusic() {
                 // Membuat notifikasi
                 var notification = new Notification('Musik Dimulai', {
                     body: 'Musik sedang diputar', // Konten pesan notifikasi
-                    icon: 'path/to/your/icon.png' // URL untuk ikon notifikasi (opsional)
+                    icon: 'path/to/img/icon.png' // URL untuk ikon notifikasi (opsional)
+                });
+            }
+        });
+    }
+    // Menangani permintaan izin notifikasi di peramban Android
+    else if ('Notification' in window && Notification.permission === 'default') {
+        // Meminta izin untuk menampilkan notifikasi
+        Notification.requestPermission(function(permission) {
+            if (permission === 'granted') {
+                // Membuat notifikasi
+                var notification = new Notification('Musik Dimulai', {
+                    body: 'Musik sedang diputar', // Konten pesan notifikasi
+                    icon: 'path/to/img/icon.png' // URL untuk ikon notifikasi (opsional)
                 });
             }
         });
