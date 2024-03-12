@@ -4,6 +4,6 @@ window.onload = () => {
 };
 
 function playMusic() {
-    var audio = document.getElementById("backgroundMusic"); // Mengambil elemen audio berdasarkan ID
+    var audio = document.getElementById("myAudio"); // Mengambil elemen audio berdasarkan ID
     audio.play(); // Memainkan musik
 }
