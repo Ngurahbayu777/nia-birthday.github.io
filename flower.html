@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+   <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
@@ -9,6 +9,24 @@
     <title>flowers</title>
 </head>
 <body class="container">
+    <!-- Your other HTML content here -->
+
+    <audio id="myAudio" src="your_music_file.mp3"></audio>
+    <script>
+        window.onload = () => {
+            document.body.classList.remove("container"); // Menghapus kelas "container" dari elemen body
+            playMusic(); // Memanggil fungsi untuk memainkan musik
+        };
+
+        function playMusic() {
+            var audio = document.getElementById("myAudio"); // Mengambil elemen audio berdasarkan ID
+            audio.play(); // Memainkan musik
+        }
+    </script>
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/gh3AXbPsx1E?si=Keph5POi3qGTrFBd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+    <!-- Your other HTML content here -->
   <!-- Pembuat code: https://codepen.io/mdusmanansari/pen/BamepLe -->
     <div class="night"></div>
     <div class="flowers">
