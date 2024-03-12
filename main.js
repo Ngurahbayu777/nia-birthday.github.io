@@ -1,10 +1,10 @@
 window.onload = () => {
     document.body.classList.remove("container"); // Menghapus kelas "container" dari elemen body
-    var playButton = document.getElementById("playButton"); // Mengambil elemen tombol play
+    var playButton = document.getElementById("playButton"); // Mendapatkan elemen tombol putar
     if (playButton) {
-        playButton.addEventListener("click", playMusic); // Menambahkan event listener untuk memanggil fungsi playMusic saat tombol play diklik
+        playButton.addEventListener("click", playMusic); // Menambahkan event listener untuk memanggil fungsi playMusic saat tombol putar diklik
     } else {
-        console.error("Element with id 'playButton' not found.");
+        console.error("Elemen dengan ID 'playButton' tidak ditemukan.");
     }
 };
 
@@ -15,9 +15,9 @@ function playMusic() {
     // Memeriksa apakah notifikasi didukung oleh browser
     if ('Notification' in window && Notification.permission === 'granted') {
         // Membuat notifikasi
-        var notification = new Notification('Musik dimulai', {
-            body: 'Musik sedang diputar', // Isi pesan notifikasi
-            icon: 'path/to/img/flowers.png' // URL ikon untuk notifikasi (opsional)
+        var notification = new Notification('Musik Dimulai', {
+            body: 'Musik sedang diputar', // Konten pesan notifikasi
+            icon: 'path/to/your/icon.png' // URL untuk ikon notifikasi (opsional)
         });
     }
     // Meminta izin untuk menampilkan notifikasi jika belum diberikan
@@ -25,9 +25,9 @@ function playMusic() {
         Notification.requestPermission().then(function(permission) {
             if (permission === 'granted') {
                 // Membuat notifikasi
-                var notification = new Notification('Musik dimulai', {
-                    body: 'Musik sedang diputar', // Isi pesan notifikasi
-                    icon: 'path/to/your/icon.png' // URL ikon untuk notifikasi (opsional)
+                var notification = new Notification('Musik Dimulai', {
+                    body: 'Musik sedang diputar', // Konten pesan notifikasi
+                    icon: 'path/to/your/icon.png' // URL untuk ikon notifikasi (opsional)
                 });
             }
         });
