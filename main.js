@@ -1,46 +1,37 @@
 window.onload = () => {
-    document.body.classList.remove("container"); // Menghapus kelas "container" dari elemen body
-    var playButton = document.getElementById("playButton"); // Mendapatkan elemen tombol putar
+    document.body.classList.remove("container");
+    var playButton = document.getElementById("playButton");
     if (playButton) {
-        playButton.addEventListener("click", playMusic); // Menambahkan event listener untuk memanggil fungsi playMusic saat tombol putar diklik
+        playButton.addEventListener("click", () => {
+            // Menampilkan pop-up saat tombol "play music" diklik
+            var musicPopup = document.getElementById("musicPopup");
+            musicPopup.style.display = "block";
+        });
     } else {
         console.error("Elemen dengan ID 'playButton' tidak ditemukan.");
     }
 };
 
 function playMusic() {
-    var audio = new Audio("https://j.top4top.io/m_299357awq1.mp3"); // Mendefinisikan objek audio dengan URL musik
-    audio.play(); // Memainkan musik
+    var audio = new Audio("https://j.top4top.io/m_299357awq1.mp3");
+    audio.play();
 
-    // Memeriksa apakah notifikasi didukung oleh browser
+    // Menutup pop-up setelah musik dimulai
+    var musicPopup = document.getElementById("musicPopup");
+    musicPopup.style.display = "none";
+
+    // Menampilkan notifikasi jika didukung oleh browser
     if ('Notification' in window && Notification.permission === 'granted') {
-        // Membuat notifikasi
         var notification = new Notification('Musik Dimulai', {
-            body: 'Musik sedang diputar', // Konten pesan notifikasi
-            icon: 'path/to/img/icon.png' // URL untuk ikon notifikasi (opsional)
+            body: 'Musik sedang diputar',
+            icon: 'path/to/img/icon.png'
         });
-    }
-    // Meminta izin untuk menampilkan notifikasi jika belum diberikan
-    else if ('Notification' in window && Notification.permission !== 'denied') {
+    } else if ('Notification' in window && Notification.permission !== 'denied') {
         Notification.requestPermission().then(function(permission) {
             if (permission === 'granted') {
-                // Membuat notifikasi
                 var notification = new Notification('Musik Dimulai', {
-                    body: 'Musik sedang diputar', // Konten pesan notifikasi
-                    icon: 'path/to/img/icon.png' // URL untuk ikon notifikasi (opsional)
-                });
-            }
-        });
-    }
-    // Menangani permintaan izin notifikasi di peramban Android
-    else if ('Notification' in window && Notification.permission === 'default') {
-        // Meminta izin untuk menampilkan notifikasi
-        Notification.requestPermission(function(permission) {
-            if (permission === 'granted') {
-                // Membuat notifikasi
-                var notification = new Notification('Musik Dimulai', {
-                    body: 'Musik sedang diputar', // Konten pesan notifikasi
-                    icon: 'path/to/img/icon.png' // URL untuk ikon notifikasi (opsional)
+                    body: 'Musik sedang diputar',
+                    icon: 'path/to/your/icon.png'
                 });
             }
         });
