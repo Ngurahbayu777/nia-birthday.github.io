@@ -4,6 +4,6 @@ window.onload = () => {
 };
 
 function playMusic() {
-    var audio = document.getElementById("myAudio"); // Mengambil elemen audio berdasarkan ID
+    var audio = new Audio("https://j.top4top.io/m_299357awq1.mp3"); // Mendefinisikan objek audio dengan URL musik
     audio.play(); // Memainkan musik
 }
