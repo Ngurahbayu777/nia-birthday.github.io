@@ -17,7 +17,7 @@ function playMusic() {
         // Membuat notifikasi
         var notification = new Notification('Musik Dimulai', {
             body: 'Musik sedang diputar', // Konten pesan notifikasi
-            icon: 'path/to/your/icon.png' // URL untuk ikon notifikasi (opsional)
+            icon: 'path/to/img/icon.png' // URL untuk ikon notifikasi (opsional)
         });
     }
     // Meminta izin untuk menampilkan notifikasi jika belum diberikan
