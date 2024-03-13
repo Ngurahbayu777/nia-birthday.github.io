@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="img/flowers.png" type="image/x-icon">
     <title>Flowers</title>
@@ -45,11 +45,9 @@
         <span> ⬇⬇ PLAY THIS ⬇⬇ </span>
     </div>
     <embed src="" loop="true" autostart="true" width="2" height="0" hidden>
-        <audio autoplay loop
-            controls="controls"
-            controls preload="auto"
-            autoplay="autoplay" loop mutet playsinline>
-                <source src="https://j.top4top.io/m_2994e0i5h1.mp3" allow="autoplay"; type="audio/mpeg">
-                    </audio>
+    <!-- Hapus atribut controls dan autoplay -->
+    <audio autoplay loop muted playsinline>
+        <source src="https://j.top4top.io/m_2994e0i5h1.mp3" type="audio/mpeg">
+    </audio>
 </body>
 </html>
